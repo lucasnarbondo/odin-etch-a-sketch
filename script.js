@@ -55,19 +55,19 @@ function setupGrid(size) {
     
 }
 
-let stopClick = false;
-document.body.onmousedown = () => (stopClick = true)
-document.body.onmouseup = () => (stopClick = false)
+let pressingClick = false;
+document.body.onmousedown = () => (pressingClick = true)
+document.body.onmouseup = () => (pressingClick = false)
 
 function changeColor(e){
-    if (e.type == 'mouseover' && stopClick)
-    if (currentMode === 'rainbow') {
-        const randomR = Math.floor(Math.random() * 256)
-        const randomG = Math.floor(Math.random() * 256)
-        const randomB = Math.floor(Math.random() * 256)
-        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
-      } else if (currentMode === 'color') {
-        e.target.style.backgroundColor = currentColor
+    if (e.type == 'mouseover' && pressingClick){
+        if (currentMode === 'rainbow') {
+            const randomR = Math.floor(Math.random() * 256)
+            const randomG = Math.floor(Math.random() * 256)
+            const randomB = Math.floor(Math.random() * 256)
+            e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`
+        } else {
+            e.target.style.backgroundColor = currentColor
       }
-
+    }
 }
