@@ -1,0 +1,32 @@
+.header,
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eee;
+  font-family: Roboto, sans-serif;
+}
+
+.footer {
+    margin-top:auto;
+    }
+
+body {
+    font-family: Roboto, sans-serif;
+    background: #eee;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+
+.settings {
+    font-family: Roboto, sans-serif;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
